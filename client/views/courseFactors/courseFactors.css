@@ -1,0 +1,69 @@
+.horizontal-section {
+  min-width: 200px;
+  flex-direction:row;
+}
+
+paper-checkbox  {
+  display: inline-block;
+  min-width:10em;
+  padding-left: 0px !important;
+  font-size: 13px !important;
+  padding: 1px;
+  text-overflow:ellipsis;
+}
+
+paper-checkbox #checkboxLabel.paper-checkbox{ padding-left: 2px !important;}
+
+.label-checkbox-courses {
+  display: inline-block !important;
+  vertical-align: middle;
+  white-space: nowrap;
+  width: 8em;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  padding-right: 7px !important;
+}
+
+#cf-chart {
+  margin-bottom: -30px;
+  margin-top: -30px;
+}
+
+.horizontal-section {
+  flex-direction: row;
+  display: flex;
+  flex-wrap: wrap;
+  position: relative;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.cf-checkbox {
+  color: #424242;
+  max-width: 140px;
+  min-width: 140px;
+  margin-right: 5px;
+  display: inline-block;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.cf-checkbox #checkboxLabel {
+  padding-left: 4px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  max-width: 130px;
+  display: inline-block;
+  overflow: hidden;
+}
+
+.cf-nothing {
+  height: 400px;
+  background: none;
+  align-content: center;
+  justify-content: center;
+  display: none;
+  align-items: center;
+  color: #c6c6c6;
+}

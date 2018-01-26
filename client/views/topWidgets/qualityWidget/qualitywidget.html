@@ -1,0 +1,27 @@
+<template name="qualitywidget">
+  <div class="quality-content">
+    <div class="quality-content-viz">
+      <progress-bubble class="quality-bubble" value="{{quality.value}}" max="100">
+        <div class="quality-progress-title" style="font-size: 17px;">{{quality.text}}</div>
+      </progress-bubble>
+    </div>
+    {{#unless loading}}
+    {{/unless}}
+    <div class="widget-title">
+      <div class="widget-title-text" style="width: 180px;">Calidad en la Predicción</div>
+      <iron-icon class="widget-title-icon quality-info" icon="icons:info"></iron-icon>
+    </div>
+    {{#if loading}}
+    <paper-spinner-lite style="position: absolute; bottom:50%; right: 43%;" class="qw-spinner pink" active></paper-spinner-lite>
+    {{/if}}
+    <div class="help-info" style="border-radius: 5px;">
+      <iron-icon class="close-info" icon="icons:clear"></iron-icon>
+      <div class="help-info-container">
+        <div class="help-text">
+          Muestra la calidad de la estimación.  Esta estimación está basada en  <u>{{quality.cases}}</u> casos.
+          Por lo tanto, es <u>{{quality.casestext}}</u>.
+        </div>
+      </div>
+    </div>
+  </div>
+</template>

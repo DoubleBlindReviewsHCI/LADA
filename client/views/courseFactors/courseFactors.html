@@ -1,0 +1,54 @@
+<template name="coursefactors">
+  <paper-material class="card-content courseskill-paper" track="courseskill.maincontainer">
+    <div class="chart-content" track="courseskill.maincontainer">
+      <div class="card-content-top" track="courseskill.topcontent">
+        <div class="card-content-top-text" track="courseskill.topcontent.title">
+          <div class="card-title" track="courseskill.topcontent.title">
+            <div class="card-title-text" track="courseskill.topcontent.title">
+              Habilidades Requeridas
+            </div>
+            <iron-icon class="card-info" icon="icons:info" track="courseskill.topcontent.infoicon"></iron-icon>
+          </div>
+          <div class="card-subtitle" track="courseskill.topcontent.subtitle">
+            <!-- No influence in prediction -->
+          </div>
+        </div>
+      </div>
+      <div class="card-settings-icon" track="courseskill.topcontent.togglebutton">
+        <paper-toggle-button class="cf-toggle" checked track="courseskill.topcontent.togglebutton"></paper-toggle-button>
+      </div>
+      <!-- Middle Content -->
+      <div class="card-content-middle" track="courseskill.middlecontent">
+        <canvas class="canvaschartcourseskills" id="cf-chart" width="350" height="300" track="courseskill.middlecontent.canvas"></canvas>
+      </div>
+      <div class="cf-nothing" track="courseskill.middlecontent.cardisoff">Esta tarjeta está apagada</div>
+      <!-- Bottom Content -->
+      <div class="card-content-bottom" track="courseskill.bottomcontent">
+        <div class="card-content-control" track="courseskill.bottomcontent">
+          <div class="control-title" track="courseskill.bottomcontent.title">Cursos</div>
+          <div class="horizontal-section" track="courseskill.bottomcontent">
+            {{#each sessionCourses}}
+            <paper-checkbox title="{{name}}"  track="courseskill.bottomcontent.checkbox.{{name}}" value="{{code}}" class="cf-checkbox" checked style="padding-bottom: 2px;">{{name}}</paper-checkbox>
+            {{/each}}
+            {{#unless sessionCourses}}
+            <div class="horizontal-section" track="courseskill.bottomcontent.nocourses">
+              <div class="course-name" track="courseskill.bottomcontent.nocourses">Añadir cursos para ver más detalles.</div>
+            </div>
+            {{/unless}}
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="help-info" track="courseskill.maincontainer.help">
+      <iron-icon class="close-info" icon="icons:clear" track="courseskill.maincontainer.help"></iron-icon>
+      <div class="help-info-container" track="courseskill.maincontainer.help">
+        <div class="help-text ht-middle" track="courseskill.maincontainer.help">
+          Muestra las habilidades necesarias para cada uno de los cursos seleccionados en para el semestre. Se puede contrastar frente a las habilidades del estudiante siendo evaluado.
+        </div>
+        <div class="ht-bottom" style="color: white; font-size: 13px;" track="courseskill.maincontainer.help">
+          [Click en cualquier parte para cerrar]
+        </div>
+      </div>
+    </div>
+  </paper-material>
+</template>
